@@ -50,8 +50,8 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repository-url>
-   cd <repository-folder-name>
+   git clone https://github.com/arya20072004/resume-analyzer.git
+   cd resume-analyzer
    ```
 
 2. **Create a virtual environment (Optional):**
@@ -112,6 +112,6 @@ matplotlib
 
 | Name              | GitHub Profile                         |
 |-------------------|----------------------------------------|
-| **Arya Borhade**  | [@arya202004]((https://github.com/arya20072004))  |
+| **Arya Borhade**  | [@arya20072004]((https://github.com/arya20072004))  |
 
 ---
