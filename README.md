@@ -1,61 +1,117 @@
-✨ Resume Ranker AI
-An intelligent Streamlit application designed to screen, analyze, and rank candidate resumes against a given job description. This tool helps recruiters and hiring managers efficiently identify the most qualified candidates by leveraging NLP for similarity scoring, keyword extraction, and experience estimation.
+# 🤖 Resume Ranker AI
 
-(Suggestion: Replace the placeholder above with a screenshot of your running application!)
+**Resume Ranker AI** is an AI-powered resume screening and ranking tool that analyzes multiple resumes against a given job description. It extracts key skills, estimates years of experience, and ranks candidates using **NLP techniques** and **machine learning**.  
 
-🚀 Features
-Similarity Scoring: Calculates a cosine similarity score between each resume and the job description to quantify the match.
+---
 
-Custom Keyword Analysis: Extracts a user-defined list of skills and keywords from resumes.
+## 🚀 Key Features
 
-Experience Estimation: Intelligently estimates the years of experience for each specified keyword (e.g., "Python: 5.0 years").
+- **Resume Analysis**: Upload multiple resumes in PDF format for automated screening.  
+- **Job Description Parsing**: Supports JD upload in PDF or TXT formats.  
+- **Ranking Algorithm**:
+  - Uses **TF-IDF Vectorization** and **Cosine Similarity** to score resumes.  
+- **Skill Extraction**:
+  - Detects predefined or user-specified keywords in resumes.  
+- **Experience Estimation**:
+  - Estimates years of experience per skill using text pattern recognition.  
+- **Exportable Results**:
+  - Download ranked results in CSV format.  
+- **Interactive Streamlit UI**:
+  - Easy-to-use web interface for recruiters and hiring managers.  
 
-Contact Information Extraction: Pulls email addresses and phone numbers from resumes.
+---
 
-Interactive UI: A modern, dark-themed, and user-friendly interface built with Streamlit.
+## 📂 Project Structure
 
-Detailed Views: Provides expandable sections to view the full resume text, keyword context, and a resume word cloud.
+```
+.
+├── README.md                # Project documentation
+├── requirements.txt         # Required Python packages
+├── main.py                  # Main Streamlit application
+└── data/                    # (Optional) Folder for sample resumes/JDs
+```
 
-Data Export: Allows you to export the ranked list of candidates to a CSV file.
+---
 
-🛠️ Installation & Setup
-To run this application locally, follow these steps:
+## 🤖 Core Functionalities
 
-Clone the repository:
+| Function                          | Description                                                        |
+|----------------------------------|--------------------------------------------------------------------|
+| `extract_text_from_pdf()`        | Extracts raw text from uploaded PDF resumes.                      |
+| `preprocess_text()`              | Cleans and tokenizes text for NLP analysis.                       |
+| `calculate_similarity()`         | Computes similarity between JD and resumes using TF-IDF & cosine. |
+| `extract_skills_from_text()`     | Detects predefined/custom skills in text.                         |
+| `estimate_years_of_experience()` | Finds and estimates experience years for each detected skill.     |
+| `analyze_keyword_context()`      | Highlights sentences containing relevant keywords.                |
 
-git clone https://github.com/YOUR_USERNAME/resume-ranker-ai.git
-cd resume-ranker-ai
+---
 
-Create and activate a virtual environment (recommended):
+## 🛠️ Installation
 
-# For Windows
-python -m venv venv
-.\venv\Scripts\activate
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-folder-name>
+   ```
 
-# For macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+2. **Create a virtual environment (Optional):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate      # Windows: venv\Scripts\activate
+   ```
 
-Install the required dependencies:
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-pip install -r requirements.txt
+---
 
-▶️ How to Run
-Once the setup is complete, you can run the Streamlit application with the following command:
+## 🏃‍♀️ Usage
 
-streamlit run main_app.py
+Run the following command to start the Streamlit application:
 
-Your web browser should automatically open to the application's URL.
+```bash
+streamlit run main.py
+```
 
-📋 How to Use
-Upload Job Description: Use the sidebar to upload a PDF or TXT file containing the job description.
+Once the app is running, open the local URL provided by Streamlit (e.g., `http://localhost:8501`) to access the tool.  
 
-Upload Resumes: Upload one or more candidate resumes in PDF format.
+**Steps:**
+1. Upload a **Job Description** (PDF or TXT).  
+2. Upload one or more **Resumes** (PDF only).  
+3. Optionally add custom keywords in the sidebar.  
+4. Click **Rank Resumes** to generate rankings, scores, and skill analysis.  
+5. Download the results as a CSV file.  
 
-Customize Keywords (Optional): Modify the comma-separated list of keywords you want to analyze.
+---
 
-Rank Resumes: Click the "Rank Resumes" button to start the analysis.
+## 📌 Notes
 
-View Results: The main area will display a ranked list of candidates. You can expand each candidate's card to view more details.
+- Supports **PDF resumes** only (TXT support can be added).  
+- Skills are customizable through the sidebar input.  
+- This project is designed for **HR automation, recruitment optimization**, and **data science portfolio demonstration**.  
 
-Export Data: Scroll to the bottom to download the results as a CSV file.
+---
+
+## 📂 requirements.txt
+
+```txt
+streamlit
+pandas
+scikit-learn
+PyPDF2
+nltk
+wordcloud
+matplotlib
+```
+
+---
+
+## ✍️ Authors & Contributors
+
+| Name              | GitHub Profile                         |
+|-------------------|----------------------------------------|
+| **Arya Borhade**  | [@arya202004]((https://github.com/arya20072004))  |
+
+---
